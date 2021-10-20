@@ -1,6 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
 
+import React, {Component} from 'react';
+import { connect } from 'react-redux'
+import { fetchUsers } from './actions/usersActions'
+import userList from './components/usersList.js'
+
 function App() {
   return (
     <div className="App">
