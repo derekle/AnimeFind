@@ -1,8 +1,13 @@
 class UsersController < ApplicationController
     def index
         puts 'fetching all users.'
-        users = User.all
-        render json: users, except:[:password_digest, :created_at, :updated_at]
+        # users = User.all
+        # render json: users, except:[:password_digest, :created_at, :updated_at]
+        qry = Jikan::Query.new
+        railgun = qry.search("railgun", :anime)
+        puts railgun.class
+
+        render json:  railgun.raw.fetch('results')
     end
 
     def create
