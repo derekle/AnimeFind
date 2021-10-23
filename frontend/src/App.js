@@ -5,18 +5,21 @@ import { connect } from 'react-redux'
 import { fetchUsers } from './actions/usersActions'
 import UserList from './components/usersList.js'
 
+
 class App extends Component {
+ 
   componentDidMount() {
     console.log('component mounted...')
 		this.props.fetchUsers();
   }
   
   render() {
+
     console.log('rendering...')
     console.log(this.props)
     return (
-      <div>
-        <UserList userNames={this.props.users} />
+      <div class='shows'>
+        <UserList userNames={this.props.users} theme={this.props.theme}/>
       </div>
     )
   }
