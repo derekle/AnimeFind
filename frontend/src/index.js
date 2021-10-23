@@ -20,9 +20,30 @@ const darkTheme = createTheme({ palette: { mode: 'dark' } });
 
 
 ReactDOM.render(
-	<React.StrictMode>
-		<App />
-	</React.StrictMode>,
+	<div class='main'>
+		<Provider store={store}>
+			<TopNavBar theme={darkTheme}/>
+			<main class="parallaxMain">
+
+				<section class="parallaxSection parallaxSection--header">
+					<div class='headerContent'>
+						<h1 class='headerText'>MY APP</h1>
+						<text class='subText'>The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps.</text>
+					</div>
+					<div class='gradient'/>
+				</section>
+				<section class="staticSection staticSection--base">
+					<App theme={darkTheme} />
+				</section>
+				<section class='footerSection'>
+					<div class='footerContent'>
+					<h2 class='footerText'>FOOTER</h2>
+					<text class='subText'>Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica, sport etc, litot Europa usa li sam vocabular. Li lingues differe solmen in li grammatica, li pronunciation e li plu commun vocabules.</text>
+					</div>
+				</section>
+			</main>
+		</Provider>
+	</div>,
   document.getElementById('root')
 );
 
