@@ -3,21 +3,14 @@ code {
 		monospace;
 }
 
-.parallax-container {
-	position: relative;
-	height: 100vh;
-	overflow-x: hidden;
-	overflow-y: auto;
-	perspective: 2px;
-}
-
 section {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
 
-.content {
+/* header styling */
+.headerContent {
 	text-align: justify;
 	text-justify: inter-word;
 	display: block;
@@ -27,19 +20,24 @@ section {
 .headerText {
 	font-size: 75px;
 }
-.subText {
-}
-.parallax-section {
+
+/* parallax styling */
+.parallaxMain {
+	position: relative;
 	height: 100vh;
-	perspective: 1px;
+	overflow-x: hidden;
+	overflow-y: auto;
+	perspective: 2px;
 }
 
-.parallax-section {
+.parallaxSection {
+	height: 100vh;
+	perspective: 1px;
 	transform-style: preserve-3d;
 	z-index: -1;
 }
 
-.parallax-section:after {
+.parallaxSection:after {
 	content: '';
 	position: absolute;
 	top: 0;
@@ -54,6 +52,16 @@ section {
 	transform: translateZ(-2px) scale(4.5);
 	z-index: -1;
 }
+
+.staticSection {
+	height: max-content;
+	background-color: rgb(14, 14, 14);
+	color: white;
+	position: relative;
+	z-index: 0;
+}
+
+/* gradient styling */
 .gradient {
 	position: absolute;
 	bottom: 0;
@@ -66,25 +74,18 @@ section {
 		rgb(14, 14, 14)
 	);
 }
-.static-section {
-	height: max-content;
-	/* box-shadow: 0 0 25px 25px rgb(14, 14, 14); */
-	background-color: rgb(14, 14, 14);
-	color: white;
-	position: relative;
-	z-index: 0;
-}
 
-.footer {
+/* footer styling*/
+.footerSection {
 	background-color: rgb(20, 20, 20);
 	bottom: 0;
 	position: static;
 	z-index: 1;
-	color: white;
+	color: grey;
 	font-weight: lighter;
 }
 
-.footer-content {
+.footerContent {
 	padding-top: 50px;
 	vertical-align: bottom;
 	max-width: 50%;
