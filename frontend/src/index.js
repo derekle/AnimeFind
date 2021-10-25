@@ -12,33 +12,33 @@ import thunk from 'redux-thunk';
 import { createTheme, ThemeProvider, styled } from '@mui/material/styles';
 
 import reportWebVitals from './reportWebVitals';
-import usersReducer from './reducers/usersReducer';
+import animeReducer from './reducers/animeReducer';
 
 
-const store = createStore(usersReducer, applyMiddleware(thunk));
+const store = createStore(animeReducer, applyMiddleware(thunk));
 const darkTheme = createTheme({ palette: { mode: 'dark' } });
 
 
 ReactDOM.render(
-	<div class='main'>
+	<div className='main'>
 		<Provider store={store}>
 			<TopNavBar theme={darkTheme}/>
-			<main class="parallaxMain">
+			<main className="parallaxMain">
 
-				<section class="parallaxSection parallaxSection--header">
-					<div class='headerContent'>
-						<h1 class='headerText'>MY APP</h1>
-						<text class='subText'>The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps.</text>
+				<section className="parallaxSection parallaxSection--header">
+					<div className='headerContent'>
+						<h1 className='headerText'>MY APP</h1>
+						<p className='subText'>The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps.</p>
 					</div>
-					<div class='gradient'/>
+					<div className='gradient'/>
 				</section>
-				<section class="staticSection staticSection--base">
+				<section className="staticSection staticSection--base">
 					<App theme={darkTheme} />
 				</section>
-				<section class='footerSection'>
-					<div class='footerContent'>
-					<h2 class='footerText'>FOOTER</h2>
-					<text class='subText'>Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica, sport etc, litot Europa usa li sam vocabular. Li lingues differe solmen in li grammatica, li pronunciation e li plu commun vocabules.</text>
+				<section className='footerSection'>
+					<div className='footerContent'>
+					<h2 className='footerText'>FOOTER</h2>
+					<p className='subText'>Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica, sport etc, litot Europa usa li sam vocabular. Li lingues differe solmen in li grammatica, li pronunciation e li plu commun vocabules.</p>
 					</div>
 				</section>
 			</main>
