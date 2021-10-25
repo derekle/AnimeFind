@@ -1,17 +1,17 @@
-const usersReducer = (state = {users: [], loading: false}, action) => {
+const animeReducer = (state = {anime: [], loading: false}, action) => {
     switch (action.type) {
-        case 'LOADING_USERS':
+        case 'LOADING_ANIME':
             console.log(action.type)
             return {
                 ...state,
-                users: [...state.users],
+                anime: [...state.anime],
                 loading: true
             }
-        case 'ADD_USERS':
+        case 'ADD_ANIME':
             console.log(action.type)
 			return {
 				...state,
-				users: action.users,
+				anime: action.anime,
 				loading: false,
 			};
         
@@ -19,4 +19,4 @@ const usersReducer = (state = {users: [], loading: false}, action) => {
             return state
     }
 }
-export default usersReducer
+export default animeReducer
