@@ -1,0 +1,14 @@
+.card {
+	display: inline-block;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+.listHeader {
+	padding-left: 15px;
+	font-weight: normal;
+}
+.results {
+	overflow-x: scroll;
+	overflow-y: hidden;
+	white-space: nowrap;
+}
