@@ -25,12 +25,23 @@ class AnimeList extends Component {
       }
 
 	componentDidMount() {
-		console.log('componentWillMount()')
+		console.log('componentDidMount()')
 
 		console.log("AnimeList component mounted with these props:")
 		console.log(this.props)
 		console.log('fetching '+ this.props.header)
 		this.props.fetchAnime(this.props.resource, this)
+	}
+
+	componentDidUpdate(prevProps) {
+		console.log('componentUpdated')
+		console.log(this.props)
+		if (prevProps.resource !== this.props.resource) {
+			console.log('shit updated')
+			this.props.fetchAnime(this.props.resource, this)
+	} else {
+			console.log('shit didnt update')
+		}
 	}
 
 	updateList = (array) => {
@@ -83,7 +94,7 @@ class AnimeList extends Component {
 			<div className='animeList'>
 				<h2 className='listHeader'>{this.props.header}</h2>
 				<div className='results'>
-					<div className='scrollingWrapper'>
+					<div className={'scrollingWrapper-'+this.props.scroll}>
 					<ThemeProvider theme={this.props.theme}>
 						{images}
 					</ThemeProvider>
