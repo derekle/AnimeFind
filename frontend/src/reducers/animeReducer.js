@@ -1,22 +1,13 @@
-const animeReducer = (state = {anime: [], loading: false}, action) => {
+export default function anime(state = [], action){
     switch (action.type) {
         case 'LOADING_ANIME':
             console.log(action.type)
-            return {
-                ...state,
-                anime: [...state.anime],
-                loading: true
-            }
+            return state
         case 'ADD_ANIME':
             console.log(action.type)
-			return {
-				...state,
-				anime: action.anime,
-				loading: false,
-			};
+        return state
         
         default:
             return state
     }
 }
-export default animeReducer
