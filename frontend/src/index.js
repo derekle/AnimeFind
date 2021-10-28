@@ -4,17 +4,15 @@ import './css/index.css';
 import App from './App';
 
 import { Provider } from 'react-redux';
-import { BrowserRouter as Router, Route } from "react-router-dom";
-
 import { createStore, applyMiddleware } from 'redux';
-import thunk from 'redux-thunk';
 import { createTheme, ThemeProvider, styled } from '@mui/material/styles';
 
 import reportWebVitals from './reportWebVitals';
-import animeReducer from './reducers/animeReducer';
+import reducer from './reducers/reducers'
+import store from './configureStore'
 
+console.log(store.getState())
 
-const store = createStore(animeReducer, applyMiddleware(thunk));
 const darkTheme = createTheme({ palette: { mode: 'dark' } });
 
 
