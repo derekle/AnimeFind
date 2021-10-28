@@ -25,4 +25,13 @@ class AnimesController < ApplicationController
 
         render json:  result.fetch('top').first(10)
     end
+
+    def search_index
+        puts "searching for: #{:id}"
+        term = params[:id]
+        qry = Jikan::Query.new
+        railgun = qry.search( params[:id], :anime)
+
+        render json:  railgun.raw.fetch('results')
+    end
 end

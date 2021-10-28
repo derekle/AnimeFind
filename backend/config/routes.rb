@@ -5,4 +5,6 @@ Rails.application.routes.draw do
 
 
   get '/animes/filter/top', :to => 'animes#top_index'
+  get '/animes/search/:id', :to => 'animes#search_index'
+
 end
