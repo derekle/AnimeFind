@@ -26,7 +26,6 @@
 	overflow-x: hidden;
 	transition: 0.5s;
 	padding-top: 60px;
-	box-shadow: 50, 50, 50, 50, white;
 	z-index: -1;
 }
 
@@ -59,4 +58,37 @@
 	transition: 0.5s;
 	padding-top: 60px;
 	z-index: -2;
+}
+
+.list {
+	color: white;
+	white-space: nowrap;
+}
+
+.list li {
+	list-style-type: none;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	padding-left: 15px;
+	border-color: white;
+}
+
+.list li:hover {
+	background-color: rgb(100, 100, 100);
+}
+
+.list li:active {
+	background-color: rgb(75, 75, 75);
+}
+
+.listitem div {
+	display: inline-block;
+	vertical-align: top;
+}
+.listlabel {
+	padding-left: 10px;
+	pointer-events: none;
+}
+.listicon {
+	pointer-events: none;
 }

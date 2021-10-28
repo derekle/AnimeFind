@@ -8,6 +8,19 @@
 	font-weight: normal;
 }
 .results {
+	position: relative;
+	margin: auto;
+}
+.scrollingWrapper-vertical {
+	/* overflow-x: hidden;
+	overflow-y: scroll;
+	white-space: nowrap; */
+	/* max-width: 100%;
+	position: relative; */
+	text-align: center;
+}
+
+.scrollingWrapper-horizontal {
 	overflow-x: scroll;
 	overflow-y: hidden;
 	white-space: nowrap;
