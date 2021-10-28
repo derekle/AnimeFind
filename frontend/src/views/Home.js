@@ -17,16 +17,16 @@ const Home = props => {
                     </section>
                     <section className="staticSection staticSection--base">
                         <div className='shows'>
-                            <AnimeList header='Top 10 Anime' resource='/filter/top'  theme={props.theme} />
-                            <AnimeList header='All Anime' resource='/'  theme={props.theme}/>
+                            <AnimeList header='Top 10 Anime' resource='/filter/top'  scroll='horizontal' theme={props.theme} />
+                            <AnimeList header='All Anime' resource='/'  scroll='horizontal' theme={props.theme}/>
                         </div>
                     </section>
-                    <section className='footerSection'>
+                    <footer className='footerSection'>
                         <div className='footerContent'>
                         <h2 className='footerText'>FOOTER</h2>
                         <p className='subText'>Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica, sport etc, litot Europa usa li sam vocabular. Li lingues differe solmen in li grammatica, li pronunciation e li plu commun vocabules.</p>
                         </div>
-                    </section>
+                    </footer>
                 </main>
         </div>
     )
