@@ -1,3 +1,4 @@
+/* control sidebar reveal */
 .visible-false-sidebar {
 	width: 0px;
 	background-color: rgb(15, 15, 15);
@@ -29,6 +30,7 @@
 	z-index: -1;
 }
 
+/* darken other content when sidebar active */
 .visible-false-overlay {
 	pointer-events: none;
 	background-color: black;
@@ -61,7 +63,6 @@
 }
 
 .list {
-	color: white;
 	white-space: nowrap;
 }
 

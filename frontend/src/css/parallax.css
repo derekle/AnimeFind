@@ -1,0 +1,38 @@
+/* parallax styling */
+.parallaxMain {
+	position: relative;
+	height: 100vh;
+	overflow-x: hidden;
+	overflow-y: auto;
+	perspective: 2px;
+}
+
+.parallaxSection {
+	height: 100vh;
+	perspective: 1px;
+	transform-style: preserve-3d;
+	z-index: -1;
+}
+
+.parallaxSection:after {
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-image: url(https://wallpaperaccess.com/full/1222722.jpg);
+	background-repeat: no-repeat;
+	background-size: cover; /* Resize the background image to cover the entire container */
+	background-color: rgb(5, 5, 5); /* Used if the image is unavailable */
+
+	transform: translateZ(-2px) scale(4.5);
+	z-index: -1;
+}
+
+.staticSection {
+	height: max-content;
+	background-color: rgb(15, 15, 15);
+	position: relative;
+	z-index: 0;
+}

@@ -12,11 +12,6 @@
 	margin: auto;
 }
 .scrollingWrapper-vertical {
-	/* overflow-x: hidden;
-	overflow-y: scroll;
-	white-space: nowrap; */
-	/* max-width: 100%;
-	position: relative; */
 	text-align: center;
 }
 
@@ -24,4 +19,11 @@
 	overflow-x: scroll;
 	overflow-y: hidden;
 	white-space: nowrap;
+}
+.shows {
+	height: inherit;
+	float: left;
+	position: relative;
+	width: 100%;
+	top: 0;
 }

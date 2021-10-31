@@ -5,13 +5,45 @@ body {
 		sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+	background-color: rgb(15, 15, 15);
+
+	color: white;
 }
 
-.shows {
-	height: inherit;
-	float: left;
-	position: relative;
+code {
+	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+		monospace;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+section {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+table,
+th,
+td {
+	text-align: center;
+	border-collapse: collapse;
+}
+
+table {
 	width: 100%;
-	top: 0;
-	background: rgb(5, 5, 5);
+	border: 0;
+}
+
+td,
+th {
+	width: 33%;
+	border-left: solid 1px white;
+	border-right: solid 1px white;
+}
+
+HTML CSS Result Skip Results Iframe EDIT ON img {
+	width: 100%;
 }

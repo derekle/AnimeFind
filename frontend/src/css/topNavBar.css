@@ -1,3 +1,4 @@
+/* bar styling */
 .topNav {
 	opacity: 95%;
 	background-color: rgb(15, 15, 15);
@@ -14,6 +15,7 @@
 	transition: margin-left 0.5s;
 }
 
+/* button styling */
 #form {
 	display: inline-block;
 }
