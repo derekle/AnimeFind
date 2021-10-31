@@ -20,6 +20,7 @@ The api is queriable and results return as image cards that users can click on t
 
 - navigate into the 'backend' folder
   `$ bundle install`
+  `$ rake db:migrate`
 
 **Frontend**
 
