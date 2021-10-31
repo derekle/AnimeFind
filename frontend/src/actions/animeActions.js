@@ -13,7 +13,7 @@ export function fetchAnime(resource, element) {
 					anime: data,
 				})
 				element.setState({
-					list: data
+					data: data
 				})
 			});
 	};
