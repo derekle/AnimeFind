@@ -38,7 +38,7 @@ const Routes = props => {
                     <Route path={`/anime/info/:topicId`}>
                         <Info />
                     </Route>
-                    {/* <Redirect to="/Home" /> */}
+                    <Redirect to="/Home" />
                 </Switch>
             </BrowserRouter>
         </div>
