@@ -25,7 +25,7 @@ class AnimeList extends Component {
     constructor(props) {
         super();
         this.state = {
-            list: null,
+            data: null,
         };
       }
 
@@ -45,35 +45,19 @@ class AnimeList extends Component {
 			: null
 	}
 
-	updateList = (array) => {
-		console.log('updateList()')
-
-		console.log('current state is:')
-		console.log(this.state)
-		console.log('updating state with: ')
-		console.log(array)
-		this.setState({
-			list: array
-		})
-		console.log('updated state is:')
-		console.log(this.state)
-	}
-
 	render() {
 		console.log('rendering ' + this.props.header + ' AnimeList component...')
 		console.log(this.props)
 		console.log(this.state)
-		const array = this.state.list || this.props.anime
+		const array = this.state.data || this.props.anime
 		const images = array.map((data, key) =>
 
 			<div key={key} className='card'>
-
 				<Card sx={{ maxWidth: 250, maxHeight: 600 }}>
 					<CardActionArea
 						component={Link}
 						to={'/anime/info/' + data.mal_id + '/' + data.title }
 					>
-
 						<CardMedia
 							component='img'
 							alt={data.mal_id}
@@ -87,8 +71,7 @@ class AnimeList extends Component {
 						</CardContent>
 					</CardActionArea>
 				</Card>
-				</div>
-
+			</div>
 		)
 
 		return (
