@@ -1,23 +1,20 @@
+//react
 import React from 'react'
-import Home from './views/Home'
-import Search from './views/Search'
-import Browse from './views/Browse'
-import Info from './views/Info'
-
-import TopNavBar from './components/topNavBar'
-
 import {
     BrowserRouter,
     Switch,
     Route,
-    useRouteMatch,
     Redirect
 } from "react-router-dom";
 
+//components
+import Home from './views/Home'
+import Search from './views/Search'
+import Info from './views/Info'
+import TopNavBar from './components/topNavBar'
+
 const Routes = props => {
     console.log(props)
-    let { path, url } = useRouteMatch();
-
     return (
         <div>
         <BrowserRouter>
@@ -31,9 +28,6 @@ const Routes = props => {
                     </Route>
                     <Route exact path='/Search'>
                         <Search theme={props.theme}/>
-                    </Route>
-                    <Route exact path='/Browse'>
-                        <Browse />
                     </Route>
                     <Route path={`/anime/info/:topicId`}>
                         <Info />

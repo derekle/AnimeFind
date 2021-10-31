@@ -1,19 +1,23 @@
+//react
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+
+//components
 import App from './App';
 
-import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
-import { createTheme, ThemeProvider, styled } from '@mui/material/styles';
+//mui
+import { createTheme} from '@mui/material/styles';
 
-import reportWebVitals from './reportWebVitals';
-import reducer from './reducers/reducers'
+//store
 import store from './configureStore'
+
+//automatically generated
+import reportWebVitals from './reportWebVitals';
 
 console.log(store.getState())
 
 const darkTheme = createTheme({ palette: { mode: 'dark' } });
-
 
 ReactDOM.render(
 	<Provider store={store}>

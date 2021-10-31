@@ -1,5 +1,11 @@
+//react
 import React from 'react'
+
+//components
 import AnimeList from '../components/animeList'
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+
+//css
 import '../css/home.css'
 import '../css/parallax.css'
 
@@ -14,7 +20,9 @@ const Home = props => {
                         <h1 className='headerText'>MY APP</h1>
                         <p className='subText'>The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps.</p>
                     </div>
-                    <div className='gradient'/>
+                    <div className='gradient'>
+                        <div className='arrow'><KeyboardArrowDownIcon fontSize='large'/></div>
+                    </div>
                 </section>
                 <section className="staticSection staticSection--base">
                     <div className='shows'>

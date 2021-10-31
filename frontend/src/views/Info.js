@@ -1,18 +1,13 @@
-import React, { Component } from 'react';
-import App from '../App';
-import AnimeList from '../components/animeList'
+//react
+import React from 'react';
+import {useParams} from "react-router-dom";
+
+//components
+import InfoContainer from '../components/infoContainer'
+
+//css
 import '../css/info.css'
 
-import InfoContainer from '../components/infoContainer'
-import { connect } from 'react-redux'
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  useParams,
-  useRouteMatch
-} from "react-router-dom";
 
 const Info = props => {
   console.log(props)

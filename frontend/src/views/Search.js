@@ -1,9 +1,13 @@
+//react
 import React from 'react'
-import App from '../App';
+import { connect } from 'react-redux'
+
+//components
 import AnimeList from '../components/animeList'
+
+//css
 import '../css/search.css'
 
-import { connect } from 'react-redux'
 
 
 const Search = props => {

@@ -1,13 +1,18 @@
-import '../css/topNavBar.css'
-import '../css/sideBar.css'
-
+//react
 import React, { Component } from 'react';
 
+//components
+import Sidebar from './sideBar'
+import Searchbar from './searchBar'
+
+//mui
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 
-import Sidebar from './sideBar'
-import Searchbar from './searchBar'
+//css
+import '../css/topNavBar.css'
+import '../css/sideBar.css'
+
 
 class TopNavBar extends Component {
 	constructor(props) {

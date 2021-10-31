@@ -1,23 +1,26 @@
-import '../css/animeList.css'
-
-
-
+//react
 import React, { Component } from 'react';
 import Card from '@mui/material/Card';
-
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-
-import Typography from '@mui/material/Typography';
-
-import { CardActionArea } from '@mui/material';
-import { fetchAnime } from '../actions/animeActions'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 
+//actions
+import { fetchAnime } from '../actions/animeActions'
 
+//components
+//mui
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Typography from '@mui/material/Typography';
+import { CardActionArea } from '@mui/material';
 import { ThemeProvider } from '@mui/material/styles';
+
+//functions
 import truncateString from '../js/math';
+
+//css
+import '../css/animeList.css'
+
 class AnimeList extends Component {
     constructor(props) {
         super();
@@ -28,7 +31,6 @@ class AnimeList extends Component {
 
 	componentDidMount() {
 		console.log('componentDidMount()')
-
 		console.log("AnimeList component mounted with these props:")
 		console.log(this.props)
 		console.log('fetching '+ this.props.header)
@@ -38,12 +40,9 @@ class AnimeList extends Component {
 	componentDidUpdate(prevProps) {
 		console.log('componentUpdated')
 		console.log(this.props)
-		if (prevProps.resource !== this.props.resource) {
-			console.log('shit updated')
-			this.props.fetchAnime(this.props.resource, this)
-	} else {
-			console.log('shit didnt update')
-		}
+		return prevProps.resource !== this.props.resource
+			? this.props.fetchAnime(this.props.resource, this)
+			: null
 	}
 
 	updateList = (array) => {

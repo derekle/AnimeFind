@@ -1,15 +1,17 @@
-import React, { Component } from 'react';
-
-
-import '../css/sideBar.css'
-import HomeIcon from '@mui/icons-material/Home';
-import SearchIcon from '@mui/icons-material/Search';
-import PageviewIcon from '@mui/icons-material/Pageview';
-
-import {withRouter} from 'react-router-dom'
+//react
+import React from 'react';
 import {useHistory} from 'react-router-dom';
 
+//components
+//mui
+import HomeIcon from '@mui/icons-material/Home';
+import SearchIcon from '@mui/icons-material/Search';
 
+//css
+import '../css/sideBar.css'
+
+
+// must be a function in order to use react hook useHistory
 export default function Sidebar(props) {
     const history = useHistory();
     const handleOnClick = (e) => {
@@ -35,14 +37,6 @@ export default function Sidebar(props) {
                         </div>
                         <div className='listlabel'>
                             Search
-                        </div>
-                    </li>
-                    <li id='/Browse' className='listitem'  onClick={handleOnClick}>
-                        <div className='listicon'>
-                            <PageviewIcon />
-                        </div>
-                        <div className='listlabel'>
-                            Browse
                         </div>
                     </li>
                 </nav>

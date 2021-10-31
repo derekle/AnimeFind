@@ -1,4 +1,8 @@
+//react
 import React, { Component } from 'react'
+
+//components
+//mui
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 
@@ -11,9 +15,9 @@ export default class InfoHeader extends Component {
     }
 
     componentDidUpdate(prevProps) {
-        if (prevProps !== this.props) {
-            this.setGenres()
-        }
+        return prevProps !== this.props
+            ? this.setGenres()
+            : null
     }
     setGenres = () => {
         const a = this.props.data.genres
@@ -34,7 +38,7 @@ export default class InfoHeader extends Component {
         return (
             <div className='infoheaderContent'>
 
-                <div className='infoTypeText'>{this.props.data.type}</div>
+                <div className='infoTypeText'>{this.props.data.type} | {this.props.data.rating}</div>
                 <div className='infoHeaderText'>{this.props.data.title_english}</div>
                 <div className='infosubHeaderText'>
                     {this.props.data.title_japanese}

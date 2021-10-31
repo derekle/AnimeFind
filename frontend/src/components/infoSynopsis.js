@@ -1,3 +1,4 @@
+//react
 import React, { Component } from 'react'
 
 export default class InfoSynopsis extends Component {
@@ -39,17 +40,14 @@ export default class InfoSynopsis extends Component {
         })
     }
 
-
     setProducers = () => {
         const a = this.props.data.producers
-        console.log(a)
         const producers = a.map((p) =>
             p.name
         )
         this.setState({
             producers: producers
         })
-        console.log(producers)
     }
 
     render() {
