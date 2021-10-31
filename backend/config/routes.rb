@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
 
-  get '/animes/filter/top', :to => 'animes#top_index'
-  get '/animes/search/:id', :to => 'animes#search_index'
-
+  get '/animes/filter/top', :to => 'animes#filter_by_top'
+  get '/animes/search/:id', :to => 'animes#search_by_id'
+  get '/animes/info/:id',   :to => 'animes#info_by_id'
 end
