@@ -1,7 +1,3 @@
-import '../css/animeInfo.css'
-
-
-
 import React, { Component } from 'react';
 import Card from '@mui/material/Card';
 
