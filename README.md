@@ -14,25 +14,25 @@ The api is queriable and results return as image cards that users can click on t
 ### Installation & Dependencies
 
 **Clone this Repository**
-:git clone https://github.com/<your_username>/\_Project5.git:
+`git clone https://github.com/<your_username>/\_Project5.git`
 
 **Backend**
 
 - navigate into the 'backend' folder
-  : $ bundle install :
+  `$ bundle install`
 
 **Frontend**
 
 - navigate into the 'frontend' folder
-  : $npm install :
+  `$npm install`
 
 ### Startup
 
 **Backend**
-: $ rails s :
+`$ rails s`
 
 **Frontend**
-: $ npm start :
+`$ npm start`
 
 ### Usage
 
