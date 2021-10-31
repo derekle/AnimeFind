@@ -10,7 +10,7 @@ const Search = props => {
     console.log(props)
     return(
         <div className='main'>
-            <main>
+            <main className='searchResults'>
                 <section className="staticSection parallaxSection--header">
                     <div className='headerContent'>
                         <h1 className='headerText'>Search</h1>
@@ -19,7 +19,7 @@ const Search = props => {
                 </section>
                 <section className="staticSection staticSection--base">
                     <div className='shows'>
-                        <AnimeList header='Results' resource={'/search/'+(props.query.text||'')}  scroll='vertical' theme={props.theme}/>
+                        <AnimeList className='searchResults' header='Results' resource={'/search/'+(props.query.text||'')}  scroll='vertical' theme={props.theme}/>
                     </div>
                 </section>
 
