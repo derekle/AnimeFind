@@ -1,6 +1,7 @@
 import React from 'react'
 import AnimeList from '../components/animeList'
 import '../css/home.css'
+import '../css/parallax.css'
 
 const Home = props => {
     console.log(props)
