@@ -36,7 +36,7 @@ class Searchbar extends Component {
         console.log(this.state.text)
         return(
             <form id='searchForm' onClick={this.handleOnClick} onSubmit={this.handleSubmit}>
-                <input onChange={this.handleChange} value={this.state.text} required minlength="3" placeholder='search'/>
+                <input onChange={this.handleChange} value={this.state.text} required minLength="3" placeholder='search'/>
                 <button type='submit'>
                     <img id='searchButton' src='https://upload.wikimedia.org/wikipedia/commons/7/7e/Vector_search_icon.svg' alt='MediaWiki authors, Public domain, via Wikimedia Commons' />
                 </button>
