@@ -13,6 +13,8 @@ import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 import { fetchAnime } from '../actions/animeActions'
 import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
+
 
 import { ThemeProvider } from '@mui/material/styles';
 import truncateString from '../js/math';
@@ -68,23 +70,23 @@ class AnimeList extends Component {
 			<div key={key} className='card'>
 
 				<Card sx={{ maxWidth: 250, maxHeight: 600 }}>
-					      <CardActionArea>
+					<CardActionArea
+						component={Link}
+						to={'/anime/info/' + data.mal_id + '/' + data.title }
+					>
 
-				<CardMedia
-					component='img'
-					alt={data.mal_id}
-					height='400'
-					image={data.image_url}
-				/>
-				<CardContent>
-					<Typography gutterBottom variant="h5" component="div">
-						{truncateString(data.title, 13)}
-					</Typography>
-					{/* <Typography variant="body2" color="text.secondary">
-						{truncateString(data.synopsis, 50)}
-					</Typography> */}
-				</CardContent>
-				</CardActionArea>
+						<CardMedia
+							component='img'
+							alt={data.mal_id}
+							height='400'
+							image={data.image_url}
+						/>
+						<CardContent>
+							<Typography gutterBottom variant="h5" component="div">
+								{truncateString(data.title, 13)}
+							</Typography>
+						</CardContent>
+					</CardActionArea>
 				</Card>
 				</div>
 
