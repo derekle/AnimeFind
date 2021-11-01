@@ -1,6 +1,6 @@
 # \_Project5
 
-This application's goal fetches and displays data from MyAnimeList's (MAL) API and displays information by anime in a modern and sleek UI, supplemented by the Material UI library.
+This application's goal fetches and displays data from MyAnimeList's (MAL) API via Jikan.moe's API wrapper and displays information by anime in a modern and sleek UI, supplemented by the Material UI library.
 The api is queriable and results return as image cards that users can click on to retrieve additional details on the show.
 
 ### Built with
