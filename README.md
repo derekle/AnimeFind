@@ -21,24 +21,25 @@ The api is queriable and results return as image cards that users can click on t
 
 - navigate into the 'backend' folder
 
-> `$ bundle install`
-> `$ rake db:migrate`
+`bundle install`
+
+`rake db:migrate`
 
 **Frontend**
 
 - navigate into the 'frontend' folder
 
-> `$npm install`
+> `npm install`
 
 ### Startup
 
 **Backend**
 
-`$ rails s`
+`rails s`
 
 **Frontend**
 
-`$ npm start`
+`npm start`
 
 ### Usage
 
