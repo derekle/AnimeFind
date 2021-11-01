@@ -15,7 +15,7 @@ class InfoContainer extends Component {
     constructor(props) {
         super();
         this.state = {
-            list: null,
+            data: null,
         };
       }
 
@@ -27,7 +27,7 @@ class InfoContainer extends Component {
 	}
 
 	render() {
-		const data = this.state.list || this.props.anime
+		const data = this.state.data || this.props.anime
 		console.log(data)
 		return (
 			<div className='info'>
