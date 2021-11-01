@@ -21,7 +21,7 @@ export default class InfoSynopsis extends Component {
     }
 
     setStudios = () => {
-        const a = this.props.data.studios
+        const a = this.props.data.studios || this.state.studios
         const studios = a.map((p) =>
             p.name
         )
@@ -31,7 +31,7 @@ export default class InfoSynopsis extends Component {
     }
 
     setLicensors = () => {
-        const a = this.props.data.licensors
+        const a = this.props.data.licensors || this.state.licensors
         const licensors = a.map((p) =>
             p.name
         )
@@ -41,7 +41,7 @@ export default class InfoSynopsis extends Component {
     }
 
     setProducers = () => {
-        const a = this.props.data.producers
+        const a = this.props.data.producers || this.state.producers
         const producers = a.map((p) =>
             p.name
         )
@@ -55,16 +55,18 @@ export default class InfoSynopsis extends Component {
             <div className='synopsisContainer'>
                 <p className='synopsis'>{this.props.data.synopsis}</p>
                 <table>
-                    <tr>
-                        <th className='synopsis'>Producers</th>
-                        <th className='synopsis'>Licensors</th>
-                        <th className='synopsis'>Studio</th>
-                    </tr>
-                    <tr>
-                        <td className='synopsis'>{this.state.producers.join(' | ')}</td>
-                        <td className='synopsis'>{this.state.licensors.join(' | ')}</td>
-                        <td className='synopsis'>{this.state.studios.join(' | ')}</td>
-                    </tr>
+                    <tbody>
+                        <tr>
+                            <th className='synopsis'>Producers</th>
+                            <th className='synopsis'>Licensors</th>
+                            <th className='synopsis'>Studio</th>
+                        </tr>
+                        <tr>
+                            <td className='synopsis'>{this.state.producers.join(' | ')}</td>
+                            <td className='synopsis'>{this.state.licensors.join(' | ')}</td>
+                            <td className='synopsis'>{this.state.studios.join(' | ')}</td>
+                        </tr>
+                    </tbody>
                 </table>
             </div>
         )

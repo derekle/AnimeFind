@@ -20,7 +20,7 @@ export default class InfoHeader extends Component {
             : null
     }
     setGenres = () => {
-        const a = this.props.data.genres
+        const a = this.props.data.genres || this.state.genres
         const genres = a.map((g) =>
             g
         )
