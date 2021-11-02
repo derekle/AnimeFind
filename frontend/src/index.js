@@ -1,3 +1,5 @@
+//index = this file is the entry point for the app.
+
 //react
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -5,9 +7,6 @@ import { Provider } from 'react-redux';
 
 //components
 import App from './App';
-
-//mui
-import { createTheme} from '@mui/material/styles';
 
 //store
 import store from './configureStore'
@@ -17,11 +16,9 @@ import reportWebVitals from './reportWebVitals';
 
 console.log(store.getState())
 
-const darkTheme = createTheme({ palette: { mode: 'dark' } });
-
 ReactDOM.render(
 	<Provider store={store}>
-		<App theme={darkTheme} />
+		<App />
 	</Provider>,
   document.getElementById('root')
 );
