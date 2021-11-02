@@ -1,3 +1,5 @@
+//animeList - this handles rendering a list of returned anime from an api endpoint - stateful - keeps track of the list of anime for each component instance
+
 //react
 import React, { Component } from 'react';
 import Card from '@mui/material/Card';
@@ -14,6 +16,8 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 import { ThemeProvider } from '@mui/material/styles';
+import Box from '@mui/material/Box';
+import LinearProgress from '@mui/material/LinearProgress';
 
 //functions
 import truncateString from '../js/math';
@@ -25,7 +29,7 @@ class AnimeList extends Component {
     constructor(props) {
         super();
         this.state = {
-            data: null,
+            data: [],
         };
       }
 
@@ -45,35 +49,48 @@ class AnimeList extends Component {
 			: null
 	}
 
+
+	loading = () => {
+		if (this.props.loading) {
+			console.log('loading:', this.props.loading)
+			return (
+				<Box sx={{ width: '100%', height: '50px'}}>
+					<LinearProgress />
+				</Box>
+			)
+		} else {
+			console.log('loading:', this.props.loading)
+			const array = this.state.data
+			const images = array.map((data, key) =>
+				<div key={key} className='card'>
+					<Card sx={{ maxWidth: 250, maxHeight: 600 }}>
+						<CardActionArea
+							component={Link}
+							to={'/anime/info/' + data.mal_id + '/' + data.title }
+						>
+							<CardMedia
+								component='img'
+								alt={data.mal_id}
+								height='400'
+								image={data.image_url}
+							/>
+							<CardContent>
+								<Typography gutterBottom variant="h5" component="div">
+									{truncateString(data.title, 13)}
+								</Typography>
+							</CardContent>
+						</CardActionArea>
+					</Card>
+				</div>
+			)
+			return images
+		}
+	}
+
 	render() {
 		console.log('rendering ' + this.props.header + ' AnimeList component...')
 		console.log(this.props)
 		console.log(this.state)
-		
-		const array = this.state.data || this.props.anime
-		const images = array.map((data, key) =>
-
-			<div key={key} className='card'>
-				<Card sx={{ maxWidth: 250, maxHeight: 600 }}>
-					<CardActionArea
-						component={Link}
-						to={'/anime/info/' + data.mal_id + '/' + data.title }
-					>
-						<CardMedia
-							component='img'
-							alt={data.mal_id}
-							height='400'
-							image={data.image_url}
-						/>
-						<CardContent>
-							<Typography gutterBottom variant="h5" component="div">
-								{truncateString(data.title, 13)}
-							</Typography>
-						</CardContent>
-					</CardActionArea>
-				</Card>
-			</div>
-		)
 
 		return (
 			<div className='animeList'>
@@ -81,7 +98,7 @@ class AnimeList extends Component {
 				<div className='results'>
 					<div className={'scrollingWrapper-'+this.props.scroll}>
 					<ThemeProvider theme={this.props.theme}>
-						{images}
+						{this.loading()}
 					</ThemeProvider>
 					</div>
 				</div>
@@ -93,10 +110,10 @@ class AnimeList extends Component {
 
 const mapStateToProps = (state) => {
 	return {
-		anime: state.anime,
-		loading: state.loading,
+		loading: state.anime.loading
 	};
 };
+
 const mapDispatchToProps = (dispatch) => {
 	return {
 		fetchAnime: (resource, element) => dispatch(fetchAnime(resource, element)),
