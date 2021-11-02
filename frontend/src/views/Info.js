@@ -1,5 +1,9 @@
+// info - this handles rendering the info page about the specified anime - stateless
+
 //react
 import React from 'react';
+
+// useParams - returns an object of key/value pairs of URL parameters. Use it to access match.params of the current <Route>. - https://reactrouter.com/
 import {useParams} from "react-router-dom";
 
 //components
@@ -8,9 +12,10 @@ import InfoContainer from '../components/infoContainer'
 //css
 import '../css/info.css'
 
-
 const Info = props => {
   console.log(props)
+
+  // useParams returns an object/hash of the URL parameters, :topicID, which is provided from the routes page when loading this component. We store that into { topicId }
   let { topicId } = useParams();
 
   return (

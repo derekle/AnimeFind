@@ -1,3 +1,5 @@
+//infoSynopsis - this handles rendering the synopsis information - stateful - keeps track of producers, licensors, and studios data after some minimal processing is done to it.
+
 //react
 import React, { Component } from 'react'
 
@@ -16,7 +18,6 @@ export default class InfoSynopsis extends Component {
             this.setProducers()
             this.setLicensors()
             this.setStudios()
-
         }
     }
 

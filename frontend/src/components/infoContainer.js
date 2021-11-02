@@ -1,3 +1,5 @@
+//infoContainer - handles how the information containers are rendered on the info page - stateless
+
 //react
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
@@ -12,13 +14,6 @@ import InfoTrailer from './infoTrailer.js'
 
 
 class InfoContainer extends Component {
-    constructor(props) {
-        super();
-        this.state = {
-            data: null,
-        };
-      }
-
 	componentDidMount() {
 		console.log('componentDidMount()')
 		console.log("AnimeInfo component mounted with these props:")
@@ -27,8 +22,7 @@ class InfoContainer extends Component {
 	}
 
 	render() {
-		const data = this.state.data || this.props.anime
-		console.log(data)
+		const data = this.props.anime
 		return (
 			<div className='info'>
 				<div className='infoHeader'>
@@ -55,9 +49,10 @@ class InfoContainer extends Component {
 
 const mapStateToProps = (state) => {
 	return {
-		anime: state.anime
+		anime: state.anime.anime
 	};
 };
+
 const mapDispatchToProps = (dispatch) => {
 	return {
 		fetchAnime: (resource, element) => dispatch(fetchAnime(resource, element)),

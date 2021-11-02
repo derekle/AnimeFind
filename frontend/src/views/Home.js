@@ -1,3 +1,5 @@
+// home - handles rendering the homepage of our application - stateless
+
 //react
 import React from 'react'
 
@@ -9,6 +11,7 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import '../css/home.css'
 import '../css/parallax.css'
 
+//contains styling for giving a parallax scroll effect. Big thanks to https://www.digitalocean.com/community/tutorials/css-pure-css-parallax for providing a small tutorial on achieving this effect.
 const Home = props => {
     console.log(props)
     return(

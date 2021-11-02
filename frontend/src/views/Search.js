@@ -1,6 +1,9 @@
+// search - handles rendering the page for search results - stateless
 //react
 import React from 'react'
-import { connect } from 'react-redux'
+
+// retrieve the current queried term, which is stored in the redux store.
+import { useSelector } from 'react-redux'
 
 //components
 import AnimeList from '../components/animeList'
@@ -8,9 +11,9 @@ import AnimeList from '../components/animeList'
 //css
 import '../css/search.css'
 
-
-
 const Search = props => {
+    const query = useSelector((state) => state.query)
+
     console.log(props)
     return(
         <div className='main'>
@@ -23,10 +26,9 @@ const Search = props => {
                 </section>
                 <section className="staticSection staticSection--base">
                     <div className='shows'>
-                        <AnimeList className='searchResults' header='Results' resource={'/search/'+(props.query.text||'')}  scroll='vertical' theme={props.theme}/>
+                        <AnimeList className='searchResults' header='Results' resource={'/search/'+(query.text||'')}  scroll='vertical' theme={props.theme}/>
                     </div>
                 </section>
-
             </main>
             <section className='footerSection'>
                 <div className='footerContent'>
@@ -38,10 +40,4 @@ const Search = props => {
     )
 }
 
-const mapStateToProps = (state) => {
-	return {
-        query: state.query
-	};
-};
-
-export default connect(mapStateToProps)(Search)
+export default Search

@@ -1,4 +1,4 @@
-//index = this file is the entry point for the app.
+//index - this file is the entry point for the app.
 
 //react
 import React from 'react';
@@ -14,10 +14,9 @@ import store from './configureStore'
 //automatically generated
 import reportWebVitals from './reportWebVitals';
 
-console.log(store.getState())
-
 ReactDOM.render(
-	<Provider store={store}>
+	// make the redux store available to any nested components
+	<Provider store={store}> 
 		<App />
 	</Provider>,
   document.getElementById('root')

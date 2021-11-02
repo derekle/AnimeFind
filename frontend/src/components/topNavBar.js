@@ -1,3 +1,5 @@
+// topnavbar - handles the rendering of the top navigation bar - stateful - this component keeps track of the sidebar visibility state, changed via the menu button
+
 //react
 import React, { Component } from 'react';
 
@@ -15,6 +17,7 @@ import '../css/sideBar.css'
 
 
 class TopNavBar extends Component {
+	// since the toggle for the sidebar menu is rendered at this component, we will keep the state here in the parent component
 	constructor(props) {
 		super(props)
 		this.state = {

@@ -1,18 +1,19 @@
+// searchbar - handles rendering and data handling of the searchbar form at the top of the page - stateful - this component keeps track of its current input value for querying
+
 //react
 import React, { Component } from 'react';
+
+//withRouter - gives us access to this.props.history, which means we can now redirect the user with this component - LondonRob, https://stackoverflow.com/questions/53539314/what-is-withrouter-for-in-react-router-dom
 import {withRouter} from 'react-router-dom'
 import { connect } from "react-redux";
 
 
 class Searchbar extends Component {
     constructor(props) {
-		super(props)
-        this.handleOnClick = this.handleOnClick.bind(this)
-        
+		super(props)       
         this.state = {
             text: "",
         };
-
     }
 
     handleOnClick = () => {

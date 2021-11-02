@@ -1,3 +1,5 @@
+//infoHeader - handles rendering the header for the info page of a show - stateful - keeps track of the genres received from the api endpoint
+
 //react
 import React, { Component } from 'react'
 

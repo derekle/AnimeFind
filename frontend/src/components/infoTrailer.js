@@ -1,11 +1,9 @@
+// infoTrailer - this handles rendering the trailer component on the info page. If there is a trailer available at the endpoint, it will render an iframe for play.
+
 //react
 import React, { Component } from 'react'
 
-export default class InfoTrailer extends Component {
-    componentDidUpdate(){
-    console.log('video component updated')
-    }
-    
+export default class InfoTrailer extends Component {   
     videoPresent = () => {
         return this.props.data.trailer_url == null
         ? <div>There is no trailer available for this series.</div>
@@ -14,12 +12,11 @@ export default class InfoTrailer extends Component {
 
     render() {
         console.log(this.props.data)
-        
         return (
-                <section className='videoContainer'>
-                    {this.videoPresent()}
-                    <p>{this.props.data.background}</p>
-                </section>
+            <section className='videoContainer'>
+                {this.videoPresent()}
+                <p>{this.props.data.background}</p>
+            </section>
         )
     }
 }
