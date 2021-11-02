@@ -49,6 +49,7 @@ class AnimeList extends Component {
 		console.log('rendering ' + this.props.header + ' AnimeList component...')
 		console.log(this.props)
 		console.log(this.state)
+		
 		const array = this.state.data || this.props.anime
 		const images = array.map((data, key) =>
 

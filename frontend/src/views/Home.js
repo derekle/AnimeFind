@@ -17,8 +17,8 @@ const Home = props => {
 
                 <section className="parallaxSection parallaxSection--header">
                     <div className='headerContent'>
-                        <h1 className='headerText'>MY APP</h1>
-                        <p className='subText'>The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps.</p>
+                        <h1 className='headerText'>AnimeFind</h1>
+                        <p className='subText'>Discover details about current, past, and upcoming anime. Check our recommendations below, or being a search above.</p>
                     </div>
                     <div className='gradient'>
                         <div className='arrow'><KeyboardArrowDownIcon fontSize='large'/></div>
