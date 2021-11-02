@@ -56,6 +56,7 @@ Distributed under the MIT License. See LICENSE.txt for more information
 # To Do
 
 - [ ] Users access MAL via authenticated requests and retrieve and manage account info, etc., or CRUD their own local account
-- [ ] Genre buttons retrieve relevant shows
+- [x] Genre buttons retrieve relevant shows
 - [ ] Divide results into 'pages'
 - [ ] Implement comment section and database
+- [ ] Add Search filters
