@@ -17,7 +17,7 @@ class AnimesController < ApplicationController
     end
 
     def info_by_id
-        puts "fetching info for: #{:id}"
+        puts "fetching info for: #{params[:id]}"
         id = params[:id]
         qry = Jikan::Query.new
         results = qry.anime_id id
@@ -36,11 +36,21 @@ class AnimesController < ApplicationController
     end
 
     def search_by_id
-        puts "searching for: #{:id}"
+        puts "searching for: #{params[:id]}"
         term = params[:id]
         qry = Jikan::Query.new
-        railgun = qry.search( params[:id], :anime)
+        result = qry.search( params[:id], :anime)
 
-        render json:  railgun.raw.fetch('results')
+        render json:  result.raw.fetch('results')
+    end
+
+    def search_by_genre
+        puts "searching by genre"
+        source = "https://api.jikan.moe/v3/genre/anime/#{params[:id]}"
+        resp = Net::HTTP.get_response(URI.parse(source))
+        data = resp.body
+        result = JSON.parse(data)
+
+        render json:  result.fetch('anime')
     end
 end
