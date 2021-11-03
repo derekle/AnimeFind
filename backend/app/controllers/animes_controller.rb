@@ -35,26 +35,23 @@ class AnimesController < ApplicationController
         render json:  result.fetch('top').first(10)
     end
 
-    def search_by_id
-        puts "searching for: #{params[:id]}"
-        term = params[:id]
-        if term == 'null' 
+    def search
+        if anime_params.length == 1
             render json: []
         else
-        qry = Jikan::Query.new
-            result = qry.search( term, :anime)
-
-            render json:  result.raw.fetch('results')
+            request = anime_params.except(:type)
+            parse = request.map{ |k,v| "#{k}=#{v}"}.join('&')
+            source = "https://api.jikan.moe/v3/search/#{anime_params[:type]}?"+parse
+            puts source
+            resp = Net::HTTP.get_response(URI.parse(source))
+            data = resp.body
+            result = JSON.parse(data)
+            render json:  result.fetch('results')
         end
     end
 
-    def search_by_genre
-        puts "searching by genre"
-        source = "https://api.jikan.moe/v3/genre/anime/#{params[:id]}"
-        resp = Net::HTTP.get_response(URI.parse(source))
-        data = resp.body
-        result = JSON.parse(data)
-
-        render json:  result.fetch('anime')
+    private
+    def anime_params
+        params.permit(:q, :type, :query, :id, :genre).to_h
     end
 end

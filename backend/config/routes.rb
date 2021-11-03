@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
 
   get '/animes/filter/top', :to => 'animes#filter_by_top'
-  get '/animes/search/:id', :to => 'animes#search_by_id'
+  get '/animes/search/:type', :to => 'animes#search'
   get '/animes/info/:id',   :to => 'animes#info_by_id'
-  get '/animes/search/genre/:id', :to => 'animes#search_by_genre'
+  # get '/animes/search/genre/:id', :to => 'animes#search_by_genre'
 end
