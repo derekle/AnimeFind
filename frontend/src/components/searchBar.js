@@ -7,9 +7,6 @@ import React, { Component } from 'react';
 import {withRouter} from 'react-router-dom'
 import { connect } from "react-redux";
 
-//js 
-import { parseQueryURL } from '../js/math'
-
 class Searchbar extends Component {
     constructor(props) {
 		super(props)       
