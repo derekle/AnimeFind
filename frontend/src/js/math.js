@@ -11,11 +11,16 @@ export const truncateString = function(str, num) {
 }
 
 // parseurl - used to bridge the parameters in a search url with params and the resource route in the api server
-export const  parseURL = function() {
+export const parseQueryURL = function() {
     let search = window.location.search;
     let params = new URLSearchParams(search);
-
-    return params.get('genre')
-        ? '/search/genre/'+params.get('genre')
-        : '/search/'+params.get('q')
+    let a = []
+    for (var pair of params.entries()) {
+        if (pair[0] !== 'type') {
+            a.push(pair[0]+'='+pair[1])
+        }
+    }
+    let result = 'anime?'+a.join('&')
+    console.log(result)
+   return result
 }
