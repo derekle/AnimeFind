@@ -60,3 +60,4 @@ Distributed under the MIT License. See LICENSE.txt for more information
 - [ ] Divide results into 'pages'
 - [ ] Implement comment section and database
 - [ ] Add Search filters
+- [x] Searching now uses queriable URL syntax
