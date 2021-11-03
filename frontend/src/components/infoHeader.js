@@ -37,8 +37,9 @@ class InfoHeader extends Component {
 
     handleOnClick = (e) => {
         let id = e.target.id
-        this.props.query({ text: ('genre/' + id) })
-        this.props.history.push('/Search')
+        let genreurl = '?q=*&type=anime&genre='+id
+        this.props.query({ text: ('genre/' + id), url: genreurl})
+        this.props.history.push('/search'+genreurl)
     }
 
     render() {
