@@ -12,11 +12,11 @@ import AnimeList from '../components/animeList'
 import '../css/search.css'
 
 //js 
-import { parseURL } from '../js/math'
+import { parseQueryURL } from '../js/math'
 
 const Search = props => {
     const query = useSelector((state) => state.query)
-    const resource = parseURL()
+    const resource = parseQueryURL()
     return(
         <div className='main'>
             <main className='searchResults'>
@@ -28,7 +28,7 @@ const Search = props => {
                 </section>
                 <section className="staticSection staticSection--base">
                     <div className='shows'>
-                        <AnimeList className='searchResults' header='Results' resource={resource}  scroll='vertical' theme={props.theme}/>
+                        <AnimeList id='searchlist' className='searchResults' header='Results' resource='/search/' query={query.url||resource} scroll='vertical' theme={props.theme}/>
                     </div>
                 </section>
             </main>
