@@ -20,7 +20,7 @@ const Info = props => {
 
   return (
     <div>
-      <InfoContainer resource={'/info/' + topicId} />
+      <InfoContainer resource={'/'+topicId+'/info/' } />
       <footer className='footerSection'>
           <div className='footerContent'>
             <h2 className='footerText'>FOOTER</h2>

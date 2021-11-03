@@ -24,7 +24,7 @@ export default class AnimeCard extends Component {
 			<Card sx={{ maxWidth: 250, maxHeight: 600 }}>
 				<CardActionArea
 					component={Link}
-					to={'/anime/info/' + this.props.data.mal_id + '/' + this.props.data.title}
+					to={'/anime/' + this.props.data.mal_id + '/info/' + this.props.data.title}
 				>
 					<CardMedia
 						component='img'

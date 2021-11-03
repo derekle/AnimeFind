@@ -4,35 +4,30 @@ require 'uri'
 
 class AnimesController < ApplicationController
     def index
-    puts 'fetching all anime for this season...'
-    source = 'https://api.jikan.moe/v3/season'
-    resp = Net::HTTP.get_response(URI.parse(source))
-    data = resp.body
-    result = JSON.parse(data)
+    end
 
-    render json:  result.fetch('anime')
+    def index_season
+        puts 'fetching all anime for this season...'
+        source = 'https://api.jikan.moe/v3/season'
+        result = json_from_endpoint(source)
+
+        render json:  result.fetch('anime')
+    end
+
+    def index_top
+        puts 'fetching top anime...'
+        source = 'https://api.jikan.moe/v3/top/anime'
+        result = json_from_endpoint(source)
+
+        render json:  result.fetch('top').first(10)
     end
 
     def show
-    end
-
-    def info_by_id
         puts "fetching info for: #{params[:id]}"
-        id = params[:id]
-        qry = Jikan::Query.new
-        results = qry.anime_id id
+        source = "https://api.jikan.moe/v3/anime/#{params[:id]}"
+        result = json_from_endpoint(source)
 
-        render json:  results.raw
-    end
-
-    def filter_by_top
-        puts 'fetching top anime...'
-        source = 'https://api.jikan.moe/v3/top/anime'
-        resp = Net::HTTP.get_response(URI.parse(source))
-        data = resp.body
-        result = JSON.parse(data)
-
-        render json:  result.fetch('top').first(10)
+        render json:  result
     end
 
     def search
@@ -42,16 +37,21 @@ class AnimesController < ApplicationController
             request = anime_params.except(:type)
             parse = request.map{ |k,v| "#{k}=#{v}"}.join('&')
             source = "https://api.jikan.moe/v3/search/#{anime_params[:type]}?"+parse
-            puts source
-            resp = Net::HTTP.get_response(URI.parse(source))
-            data = resp.body
-            result = JSON.parse(data)
+            
+            result = json_from_endpoint(source)
             render json:  result.fetch('results')
         end
     end
 
     private
-    def anime_params
-        params.permit(:q, :type, :query, :id, :genre).to_h
-    end
+        def anime_params
+            params.permit(:q, :type, :query, :id, :genre).to_h
+        end
+
+        def json_from_endpoint(source)
+            resp = Net::HTTP.get_response(URI.parse(source))
+            data = resp.body
+            result = JSON.parse(data)
+            return result
+        end
 end

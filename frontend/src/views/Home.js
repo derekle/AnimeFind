@@ -30,7 +30,7 @@ const Home = props => {
                 <section className="staticSection staticSection--base">
                     <div className='shows'>
                         <AnimeList header='Top 10 Anime' resource='/filter/top'  scroll='horizontal' theme={props.theme} />
-                        <AnimeList header='All Anime This Season' resource='/'  scroll='horizontal' theme={props.theme}/>
+                        <AnimeList header='All Anime This Season' resource='/filter/season'  scroll='horizontal' theme={props.theme}/>
                     </div>
                 </section>
                 <footer className='footerSection'>
