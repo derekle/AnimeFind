@@ -13,7 +13,7 @@ import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 
 //functions
-import truncateString from '../js/math';
+import { truncateString } from '../js/math';
 
 //css
 import '../css/animeList.css'
