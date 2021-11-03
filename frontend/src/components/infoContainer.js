@@ -5,7 +5,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 
 //acions
-import { fetchAnime } from '../actions/animeActions'
+import { fetchAnime, clearAnimeData } from '../actions/animeActions'
 
 //components
 import InfoSynopsis from './infoSynopsis'
@@ -17,7 +17,9 @@ class InfoContainer extends Component {
 	componentDidMount() {
 		console.log('componentDidMount()')
 		console.log("AnimeInfo component mounted with these props:")
-        console.log(this.props)
+		console.log(this.props)
+		this.props.clearAnimeData()
+
         this.props.fetchAnime(this.props.resource, this)
 	}
 
@@ -56,6 +58,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
 	return {
 		fetchAnime: (resource, element) => dispatch(fetchAnime(resource, element)),
+		clearAnimeData: () => dispatch(clearAnimeData())
 	};
 };
 
