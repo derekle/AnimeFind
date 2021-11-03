@@ -28,7 +28,7 @@ export default function Sidebar(props) {
         <div>
             <div className={'visible-'+props.show.toString()+'-sidebar'}>
                 <nav className='list'>
-                    <li id='/Home' className='listitem'  onClick={handleOnClick}>
+                    <li id='/home' className='listitem'  onClick={handleOnClick}>
                         <div className='listicon'>
                             <HomeIcon />
                         </div>
@@ -36,7 +36,7 @@ export default function Sidebar(props) {
                             Home
                         </div>
                     </li>
-                    <li id='/Search' className='listitem'  onClick={handleOnClick}>
+                    <li id='/search' className='listitem'  onClick={handleOnClick}>
                         <div className='listicon'>
                             <SearchIcon />
                         </div>
@@ -46,7 +46,7 @@ export default function Sidebar(props) {
                     </li>
                 </nav>
             </div>
-            <div id='Home' className={'visible-' + props.show.toString() + '-overlay'}/>
+            <div id='overlay' className={'visible-' + props.show.toString() + '-overlay'}/>
         </div>
     )
 }
