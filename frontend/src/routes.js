@@ -19,15 +19,14 @@ import TopNavBar from './components/topNavBar'
 const Routes = props => {
     //access the current theme in the store
     const theme = useSelector((state) => state.theme)
-    console.log(props)
     return (
         <div>
             <TopNavBar theme={theme} />
                 <Switch>
-                    <Route exact path='/Home'>
+                    <Route exact path='/home'>
                         <Home theme={theme}/>
                     </Route>
-                    <Route exact path='/Search'>
+                    <Route path='/search'>
                         <Search theme={theme}/>
                     </Route>
                     <Route path={`/anime/info/:topicId`}>
@@ -35,7 +34,7 @@ const Routes = props => {
                     </Route>
                 
                     {/* redirect all invalid urls not listed above to /Home */}
-                    <Redirect to="/Home" />
+                    <Redirect to="/home" />
                 </Switch>
         </div>
     )
