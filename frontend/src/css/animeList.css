@@ -27,3 +27,7 @@
 	width: 100%;
 	top: 0;
 }
+.errorMessage {
+	display: flex;
+	justify-content: center;
+}
