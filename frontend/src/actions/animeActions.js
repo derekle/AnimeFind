@@ -25,3 +25,11 @@ export function fetchAnime(resource, element) {
 			});
 	};
 }
+
+export function clearAnimeData() {
+	return (dispatch) => {
+		dispatch({
+			type:'CLEAR_DATA'
+		})
+	}
+}
