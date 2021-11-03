@@ -29,7 +29,7 @@ const Routes = props => {
                     <Route path='/search'>
                         <Search theme={theme}/>
                     </Route>
-                    <Route path={`/anime/info/:topicId`}>
+                    <Route path={`/anime/:topicId/info`}>
                         <Info />
                     </Route>
                 
