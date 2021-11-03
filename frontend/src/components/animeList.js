@@ -31,15 +31,17 @@ class AnimeList extends Component {
 		console.log(this.props)
 		console.log('fetching ' + this.props.header)
 		this.props.clearAnimeData()
-		this.props.fetchAnime(this.props.resource, this)
-		
+		return this.props.query === ""
+			? null
+			: this.props.fetchAnime(this.props.resource, this, this.props.query)
 	}
 
 	componentDidUpdate(prevProps) {
 		console.log('componentUpdated')
 		console.log(this.props)
-		return prevProps.resource !== this.props.resource
-			? this.props.fetchAnime(this.props.resource, this)
+		console.log(prevProps)
+		return prevProps.query !== this.props.query
+			? this.props.fetchAnime(this.props.resource, this, this.props.query)
 			: null
 	}
 
@@ -97,7 +99,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
 	return {
-		fetchAnime: (resource, element) => dispatch(fetchAnime(resource, element)),
+		fetchAnime: (resource, element, query) => dispatch(fetchAnime(resource, element, query)),
 		clearAnimeData: () => dispatch(clearAnimeData())
 	};
 };
