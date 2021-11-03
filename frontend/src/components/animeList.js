@@ -5,8 +5,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 
 //actions
-import { fetchAnime } from '../actions/animeActions'
-
+import { fetchAnime, clearAnimeData } from '../actions/animeActions'
 //components
 import AnimeCard from './animeCard'
 //mui
@@ -23,16 +22,17 @@ class AnimeList extends Component {
     constructor(props) {
         super();
         this.state = {
-            data: [],
+			data: [],
         };
       }
-
 	componentDidMount() {
 		console.log('componentDidMount()')
 		console.log("AnimeList component mounted with these props:")
 		console.log(this.props)
-		console.log('fetching '+ this.props.header)
+		console.log('fetching ' + this.props.header)
+		this.props.clearAnimeData()
 		this.props.fetchAnime(this.props.resource, this)
+		
 	}
 
 	componentDidUpdate(prevProps) {
@@ -42,7 +42,6 @@ class AnimeList extends Component {
 			? this.props.fetchAnime(this.props.resource, this)
 			: null
 	}
-
 
 	loading = () => {
 		if (this.props.loading) {
@@ -55,7 +54,7 @@ class AnimeList extends Component {
 		} else if (this.state.data.error) {
 				return (
 					<div className='errorMessage'>
-						<Alert severity="error">
+						<Alert severity="error"  className='alert'>
 							<AlertTitle>{this.state.data.status} Error: {this.state.data.error}</AlertTitle>
 							{this.state.data.exception}
 						</Alert>
@@ -74,9 +73,6 @@ class AnimeList extends Component {
 
 	render() {
 		console.log('rendering ' + this.props.header + ' AnimeList component...')
-		console.log(this.props)
-		console.log(this.state)
-
 		return (
 			<div className='animeList'>
 				<h2 className='listHeader'>{this.props.header}</h2>
@@ -102,6 +98,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
 	return {
 		fetchAnime: (resource, element) => dispatch(fetchAnime(resource, element)),
+		clearAnimeData: () => dispatch(clearAnimeData())
 	};
 };
 
