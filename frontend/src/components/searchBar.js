@@ -12,18 +12,20 @@ class Searchbar extends Component {
     constructor(props) {
 		super(props)       
         this.state = {
-            text: "",
+            text: '',
+            url: '',
         };
     }
 
     handleOnClick = () => {
 		console.log('form clicked!!!!')
-		this.props.history.push('/Search')
+		this.props.history.push('/search')
     }
 
     handleChange = (e) => {
         this.setState({
             text: e.target.value,
+            url: '?q='+e.target.value+'&type=anime'
         });
     }
 
@@ -31,6 +33,7 @@ class Searchbar extends Component {
         console.log('form submitting...')
         e.preventDefault();
         this.props.query(this.state);
+        this.props.history.replace('/search'+this.state.url)
     };
 
     render() {
