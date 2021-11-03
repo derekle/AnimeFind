@@ -38,10 +38,14 @@ class AnimesController < ApplicationController
     def search_by_id
         puts "searching for: #{params[:id]}"
         term = params[:id]
+        if term == 'null' 
+            render json: []
+        else
         qry = Jikan::Query.new
-        result = qry.search( params[:id], :anime)
+            result = qry.search( term, :anime)
 
-        render json:  result.raw.fetch('results')
+            render json:  result.raw.fetch('results')
+        end
     end
 
     def search_by_genre
