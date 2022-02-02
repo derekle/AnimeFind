@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/AnimeFind/static/css/main.3b1e73fd.chunk.css",
-    "main.js": "/AnimeFind/static/js/main.79f28dab.chunk.js",
-    "main.js.map": "/AnimeFind/static/js/main.79f28dab.chunk.js.map",
+    "main.js": "/AnimeFind/static/js/main.3bd5c03b.chunk.js",
+    "main.js.map": "/AnimeFind/static/js/main.3bd5c03b.chunk.js.map",
     "runtime-main.js": "/AnimeFind/static/js/runtime-main.6b277f0f.js",
     "runtime-main.js.map": "/AnimeFind/static/js/runtime-main.6b277f0f.js.map",
     "static/js/2.d35bd74a.chunk.js": "/AnimeFind/static/js/2.d35bd74a.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.6b277f0f.js",
     "static/js/2.d35bd74a.chunk.js",
     "static/css/main.3b1e73fd.chunk.css",
-    "static/js/main.79f28dab.chunk.js"
+    "static/js/main.3bd5c03b.chunk.js"
   ]
 }
