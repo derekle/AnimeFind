@@ -1,23 +1,23 @@
 {
   "files": {
     "main.css": "/AnimeFind/static/css/main.5ef8f309.chunk.css",
-    "main.js": "/AnimeFind/static/js/main.3bd5c03b.chunk.js",
-    "main.js.map": "/AnimeFind/static/js/main.3bd5c03b.chunk.js.map",
+    "main.js": "/AnimeFind/static/js/main.a2834a76.chunk.js",
+    "main.js.map": "/AnimeFind/static/js/main.a2834a76.chunk.js.map",
     "runtime-main.js": "/AnimeFind/static/js/runtime-main.6b277f0f.js",
     "runtime-main.js.map": "/AnimeFind/static/js/runtime-main.6b277f0f.js.map",
-    "static/js/2.d35bd74a.chunk.js": "/AnimeFind/static/js/2.d35bd74a.chunk.js",
-    "static/js/2.d35bd74a.chunk.js.map": "/AnimeFind/static/js/2.d35bd74a.chunk.js.map",
+    "static/js/2.5d061794.chunk.js": "/AnimeFind/static/js/2.5d061794.chunk.js",
+    "static/js/2.5d061794.chunk.js.map": "/AnimeFind/static/js/2.5d061794.chunk.js.map",
     "static/js/3.539038c3.chunk.js": "/AnimeFind/static/js/3.539038c3.chunk.js",
     "static/js/3.539038c3.chunk.js.map": "/AnimeFind/static/js/3.539038c3.chunk.js.map",
     "index.html": "/AnimeFind/index.html",
     "static/css/main.5ef8f309.chunk.css.map": "/AnimeFind/static/css/main.5ef8f309.chunk.css.map",
-    "static/js/2.d35bd74a.chunk.js.LICENSE.txt": "/AnimeFind/static/js/2.d35bd74a.chunk.js.LICENSE.txt",
+    "static/js/2.5d061794.chunk.js.LICENSE.txt": "/AnimeFind/static/js/2.5d061794.chunk.js.LICENSE.txt",
     "static/media/parallax.css": "/AnimeFind/static/media/wp7897179.329ec63f.webp"
   },
   "entrypoints": [
     "static/js/runtime-main.6b277f0f.js",
-    "static/js/2.d35bd74a.chunk.js",
+    "static/js/2.5d061794.chunk.js",
     "static/css/main.5ef8f309.chunk.css",
-    "static/js/main.3bd5c03b.chunk.js"
+    "static/js/main.a2834a76.chunk.js"
   ]
 }
