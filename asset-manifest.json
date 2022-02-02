@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/AnimeFind/static/css/main.3b1e73fd.chunk.css",
+    "main.css": "/AnimeFind/static/css/main.8ee0a36c.chunk.css",
     "main.js": "/AnimeFind/static/js/main.3bd5c03b.chunk.js",
     "main.js.map": "/AnimeFind/static/js/main.3bd5c03b.chunk.js.map",
     "runtime-main.js": "/AnimeFind/static/js/runtime-main.6b277f0f.js",
@@ -10,13 +10,13 @@
     "static/js/3.539038c3.chunk.js": "/AnimeFind/static/js/3.539038c3.chunk.js",
     "static/js/3.539038c3.chunk.js.map": "/AnimeFind/static/js/3.539038c3.chunk.js.map",
     "index.html": "/AnimeFind/index.html",
-    "static/css/main.3b1e73fd.chunk.css.map": "/AnimeFind/static/css/main.3b1e73fd.chunk.css.map",
+    "static/css/main.8ee0a36c.chunk.css.map": "/AnimeFind/static/css/main.8ee0a36c.chunk.css.map",
     "static/js/2.d35bd74a.chunk.js.LICENSE.txt": "/AnimeFind/static/js/2.d35bd74a.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.6b277f0f.js",
     "static/js/2.d35bd74a.chunk.js",
-    "static/css/main.3b1e73fd.chunk.css",
+    "static/css/main.8ee0a36c.chunk.css",
     "static/js/main.3bd5c03b.chunk.js"
   ]
 }
